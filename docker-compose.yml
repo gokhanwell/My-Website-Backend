@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+  api:
+    build: .
+    restart: always
+    image: gokhanwell-backend
+    command: >
+      bash -c "python /Backend/manage.py makemigrations &&
+       python /Backend/manage.py migrate &&
+        echo yes | python /Backend/manage.py collectstatic &&
+         python /Backend/manage.py runserver 0.0.0.0:8000"
+    environment:
+      DB_HOST : 'db'
+      DB_NAME : 'gokhanyardimci.com'
+      DB_USER : 'gokhan'
+      DB_PASS : 'gokhanyardimci.com'
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app/
