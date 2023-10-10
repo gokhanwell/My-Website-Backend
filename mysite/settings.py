@@ -12,12 +12,7 @@ SECRET_KEY = 'w%)3%2gvdneb+n7x@(cb7!su_fm_#7fuy-#2&up-$1%_bi7d0g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['api.gokhanyardimci.com',
-                 '127.0.0.1',
-                 '0.0.0.0',
-                 'gokhanyardimci.com',
-                 'www.gokhanyardimci.com',
-                 ]
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -35,16 +30,23 @@ INSTALLED_APPS = [
     # This is to allow the request from the other websites as we request data from the react running url.
     'django_summernote'
 ]
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'http://localhost:8000',
+    'http://18.206.160.68:8000',
+    'https://18.206.160.68:8000',
+    'http://18.206.160.68:3000',
+    'http://18.206.160.68:3000',
     'http://api.gokhanyardimci.com',
     'https://api.gokhanyardimci.com',
     'http://gokhanyardimci.com',
     'https://gokhanyardimci.com',
     'http://www.gokhanyardimci.com',
-    'https://www.gokhanyardimci.com',
+    'https://www.gokhanyardimci.com'
 ]
 
 GRAPHENE = {
@@ -140,7 +142,7 @@ SUMMERNOTE_THEME = 'bs4'
 
 JAZZMIN_SETTINGS = {
     "site_title": "Gökhan YARDIMCI Admin Panel",
-    "site_header": "Gökhan YARDIMCI",
+    "site_header": "Gökhan YARDIMCI ",
     "site_brand": "Gökhan YARDIMCI",
     "site_icon": "images/favicon.png",
     # Add your own branding here

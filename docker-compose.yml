@@ -4,7 +4,8 @@ services:
   api:
     build: .
     restart: always
-    image: gokhanwell-backend
+    image: gokhanwell/gokhanyardimci.com-api:0.0.5
+    platform: linux/amd64
     command: >
       bash -c "python /Backend/manage.py makemigrations &&
        python /Backend/manage.py migrate &&
